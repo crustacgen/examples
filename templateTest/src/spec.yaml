@@ -1,0 +1,4 @@
+server: localhost 
+subject: test 
+payload: Hi there! 
+publish: true
