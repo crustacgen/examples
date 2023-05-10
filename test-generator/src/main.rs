@@ -76,7 +76,7 @@ fn write_to_output_file<P: AsRef<Path>>(path: P, code: &str) -> Result<(), io::E
 }
 
 fn main() {
-    let asyncapi_yaml = concat!(env!("CARGO_MANIFEST_DIR"), "/spec/basic.yaml");
+    let asyncapi_yaml =  "spec/basic.yaml";
     let asyncapi_spec = match parse_asyncapi_yaml_file(asyncapi_yaml) {
         Ok(spec) => spec,
         Err(e) => {
@@ -85,7 +85,7 @@ fn main() {
         }
     };
     
-    let template_path = concat!(env!("CARGO_MANIFEST_DIR"), "/templates/basic.txt");
+    let template_path = "templates/basic.txt";
     let template = match read_template_file(template_path) {
         Ok(t) => t,
         Err(e) => {
@@ -103,7 +103,7 @@ fn main() {
         .replace("{{.PublishCount}}", "10")
         .replace("{{.PublishData}}", "data");
 
-    let output_path = concat!(env!("CARGO_MANIFEST_DIR"), "/output/generated.rs");
+    let output_path = "output/generated.rs";
 
     if let Err(e) = write_to_output_file(output_path, &code) {
         println!("Error writing generated code to output file: {:?}", e);
