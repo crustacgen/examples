@@ -1,0 +1,18 @@
+use bytes::Bytes;
+use futures::StreamExt;
+
+#[tokio::main]
+async fn main() -> Result<(), async_nats::Error> {
+    let client = async_nats::connect("{{.ServerURL}}").await?;
+    let mut subscriber = client.subscribe("{{.ChannelName}}".into()).await?.take({{.TakeCount}});
+
+    for _ in 0..{{.PublishCount}} {
+        client.publish("{{.ChannelName}}".into(), "{{.PublishData}}".into()).await?;
+    }
+
+    while let Some(message) = subscriber.next().await {
+      println!("Received message {:?}", message);
+    }
+
+    Ok(())
+}
