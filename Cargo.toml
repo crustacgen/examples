@@ -1,0 +1,15 @@
+[package]
+name = "asyncapi-rust-generator"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde_yaml="0.9.21"
+tokio = { version = "1", features = ["full"] }
+async-nats="0.29.0"
+futures="0.3.28"
+gtmpl = "0.7"
+gtmpl_derive="0.5"
+gtmpl_value="0.5"
