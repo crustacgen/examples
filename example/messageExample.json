@@ -23,7 +23,8 @@
       }
     }
   },
-  "payload": {
+  "payload": 
+  {
     "type": "object",
     "properties": {
       "user": {

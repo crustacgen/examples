@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+      "user": {
+        "type": "string"
+      },
+      "signup": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "user",
+      "signup"
+    ]
+  }

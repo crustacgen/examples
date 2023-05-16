@@ -1,1 +1,1 @@
-pub mod extract_types;
+pub mod schema_parser;
